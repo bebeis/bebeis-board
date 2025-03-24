@@ -1,0 +1,4 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // web 의존성이 article 에만 존재하도록 설정
+}
