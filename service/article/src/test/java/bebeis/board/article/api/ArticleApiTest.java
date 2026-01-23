@@ -97,7 +97,7 @@ public class ArticleApiTest {
         List<ArticleResponse> articles2 = restClient.get()
                 .uri("/v1/articles/infinite-scroll?boardId=1&pageSize=5&lastArticleId=%s".formatted(lastArticleId))
                 .retrieve()
-                .body(new ParameterizedTypeReference<List<ArticleResponse>>() {
+                .body(new ParameterizedTypeReference<>() {
                 });
         System.out.println("secondPage");
         for (ArticleResponse response : articles2) {

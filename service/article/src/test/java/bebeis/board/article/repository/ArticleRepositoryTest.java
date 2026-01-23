@@ -1,13 +1,14 @@
 package bebeis.board.article.repository;
 
 import bebeis.board.article.entity.Article;
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+
+import java.util.List;
 
 @Slf4j
 @SpringBootTest
@@ -19,7 +20,7 @@ class ArticleRepositoryTest {
     @Test
     void findAllTest() {
         long startMs = System.currentTimeMillis();
-        List<Article> articles = articleRepository.findAll(1L, 4999980L, 30L);
+        List<Article> articles = articleRepository.findAll(1L, 1499970L, 30L);
         long endMs = System.currentTimeMillis();
         log.info("수행 시간: " + (endMs - startMs) + "ms");
         log.info("articles.size() = {}", articles.size());
@@ -44,7 +45,10 @@ class ArticleRepositoryTest {
 
     @Test
     void countTest() {
+        long startMs = System.currentTimeMillis();
         Long count = articleRepository.count(1L, 10000L);
+        long endMs = System.currentTimeMillis();
+        log.info("수행 시간: " + (endMs - startMs) + "ms");
         log.info("count = {}", count);
     }
 
